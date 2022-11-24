@@ -1,15 +1,11 @@
 import "./App.css";
 import React from "react";
+import WebCam from "./components/WebCam";
 
 function App() {
   return (
     <div className="App">
-      <embed
-        type="video/webm"
-        src="https://webcams.windy.com/webcams/stream/1181820895"
-        width={700}
-        height={800}
-      />
+      <WebCam />
     </div>
   );
 }
