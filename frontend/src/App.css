@@ -16,13 +16,12 @@ body {
   cursor: pointer;
 }
 
-
 .positionbutton {
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: auto;
 }
 
 .logohomes {
@@ -39,7 +38,4 @@ body {
 .home {
   display: flex;
   flex-direction: column;
-
-button {
-  font-size: calc(10px + 2vmin);
 }
