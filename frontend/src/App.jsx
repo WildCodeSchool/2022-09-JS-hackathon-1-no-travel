@@ -1,29 +1,7 @@
 import "./App.css";
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
 function App() {
-  const CountryCodeKey = ["FR", "MG"];
-  console.warn(CountryCodeKey);
-  const [cam, setCam] = useState({});
-  React.useEffect(() => {
-    const fetchCamera = async () => {
-      const randomCountry =
-        CountryCodeKey[Math.floor(Math.random() * CountryCodeKey.length)];
-      axios
-        .get(
-          `https://api.windy.com/api/webcams/v2/list/country=${randomCountry}?key=${
-            import.meta.env.VITE_API_KEY
-          }`
-        )
-        .then((result) => {
-          setCam(result.data.result.webcams);
-        });
-    };
-    fetchCamera();
-  }, []);
-  console.warn(cam);
-
   return (
     <div className="App">
       <embed
