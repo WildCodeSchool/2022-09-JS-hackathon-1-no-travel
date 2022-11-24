@@ -1,7 +1,27 @@
 import axios from "axios";
 
-const CountryCodeKey = [];
-
+const CountryCodeKey = [
+  "FR",
+  "GB",
+  "ES",
+  "DK",
+  "DE",
+  "LU",
+  "CH",
+  "IT",
+  "PT",
+  "LT",
+  "BY",
+  "EE",
+  "SE",
+  "NO",
+  "RO",
+  "MK",
+  "SI",
+  "HR",
+  "BG",
+  "GR",
+];
 function getRandomCam() {
   const randomCountry =
     CountryCodeKey[Math.floor(Math.random() * CountryCodeKey.length)];
