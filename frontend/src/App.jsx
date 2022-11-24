@@ -1,5 +1,7 @@
 import HomePage from "./components/HomePage/HomePage";
 import "./App.css";
+import React from "react";
+import WebCam from "./components/WebCam";
 
 import backgroundImage from "./assets/backgroundHome.jpg";
 
@@ -20,6 +22,8 @@ function App() {
       }}
     >
       <HomePage />
+    <div className="App">
+      <WebCam />
     </div>
   );
 }
