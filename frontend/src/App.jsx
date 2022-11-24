@@ -1,12 +1,25 @@
-import Home from "./pages/Home";
-
+import HomePage from "./components/HomePage/HomePage";
 import "./App.css";
+
+import backgroundImage from "./assets/backgroundHome.jpg";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
+    <div
+      className="home"
+      style={{
+        background: `url(${backgroundImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPositionX: "center",
+        backgroundPositionY: "center",
+        backgroundAttachment: "fixed",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <HomePage />
     </div>
   );
 }
