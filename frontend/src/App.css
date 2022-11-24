@@ -16,12 +16,6 @@ code {
   text-align: center;
 }
 
-.App-logo {
-  margin-top: -18cm;
-  height: 20vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
