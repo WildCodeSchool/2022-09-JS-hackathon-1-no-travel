@@ -7,13 +7,13 @@ import Choice from "./pages/Choice";
 import "./App.css";
 
 function App() {
-  const [camId, setCamId] = useState({
+  const [cam, setCam] = useState({
     id: "",
     city: "",
   });
   React.useEffect(() => {
     async function getId() {
-      setCamId(await getRandomCam());
+      setCam(await getRandomCam());
     }
     getId();
   }, []);
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/choice" element={<Choice />} />
-          <Route path="/random" element={<WebCam camId={camId} />} />
+          <Route path="/random" element={<WebCam cam={cam} />} />
         </Routes>
       </div>
     </Router>

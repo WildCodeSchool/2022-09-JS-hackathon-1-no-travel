@@ -2,11 +2,11 @@ import WebCam from "@components/WebCam";
 import { useState } from "react";
 
 const countries = [
-  { name: "Croatie", camId: 1627241943 },
-  { name: "Allemagne", camId: 1299745209 },
-  { name: "Autriche", camId: 1465822435 },
-  { name: "Estonie", camId: 1660820510 },
-  { name: "Gréce", camId: 1363670893 },
+  { city: "Croatie", id: "1627241943" },
+  { city: "Allemagne", id: "1299745209" },
+  { city: "Autriche", id: "1465822435" },
+  { city: "Estonie", id: "1660820510" },
+  { city: "Gréce", id: "1363670893" },
 ];
 
 function Choice() {
@@ -30,19 +30,16 @@ function Choice() {
         />
         <datalist id="choice-values">
           {countries.map((country) => (
-            <option key={country.camId} value={country.name}>
-              {country.name}
+            <option key={country.id} value={country.city}>
+              {country.city}
             </option>
           ))}
         </datalist>
+        <button type="button" onClick={() => setCountryName("")}>
+          x
+        </button>
       </form>
-      {countryName !== "" && (
-        <WebCam
-          camId={
-            countries.find((element) => element.name === countryName).camId
-          }
-        />
-      )}
+      <WebCam cam={countries.find((element) => element.city === countryName)} />
     </>
   );
 }
