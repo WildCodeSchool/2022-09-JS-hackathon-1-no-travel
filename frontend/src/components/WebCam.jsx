@@ -8,7 +8,7 @@ export default function WebCam({ camId }) {
 
   return (
     <div className="webCamPage">
-      <embed type="video/webm" src={link} width={700} height={800} />
+      <embed className="video" type="video/webm" src={link} />
       <Link className="randomButton" to="/">
         Accueil
       </Link>
