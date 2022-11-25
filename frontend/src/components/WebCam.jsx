@@ -5,7 +5,7 @@ import "../App.css";
 import iphone from "../assets/iphone.png";
 
 export default function WebCam({ camId }) {
-  const link = `https://webcams.windy.com/webcams/stream/${camId}`;
+  const link = `https://webcams.windy.com/webcams/stream/${camId.id}`;
   const navigate = useNavigate();
 
   return (
@@ -25,9 +25,7 @@ export default function WebCam({ camId }) {
       }}
     >
       <embed className="video" type="video/webm" src={link} />
-      <Link className="button-cam" to="/">
-        Accueil
-      </Link>
+      <p style={{ color: "white" }}>{camId.city}</p>
       <button
         className="RefreshButton"
         type="button"
@@ -39,8 +37,11 @@ export default function WebCam({ camId }) {
           }
         }}
       >
-        Random
+        Propose moi d'autre
       </button>
+      <Link className="RefreshButton" to="/">
+        Accueil
+      </Link>
     </div>
   );
 }
