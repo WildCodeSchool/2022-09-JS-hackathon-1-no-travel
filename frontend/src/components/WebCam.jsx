@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import iphone from "../assets/iphone.png";
 
-export default function WebCam({ camId }) {
-  const link = `https://webcams.windy.com/webcams/stream/${camId.id}`;
+export default function WebCam({ cam }) {
+  const link = `https://webcams.windy.com/webcams/stream/${cam?.id}`;
   const navigate = useNavigate();
 
   return (
@@ -24,8 +24,12 @@ export default function WebCam({ camId }) {
         flexDirection: "column",
       }}
     >
-      <embed className="video" type="video/webm" src={link} />
-      <p style={{ color: "white" }}>{camId.city}</p>
+      {cam && (
+        <>
+          <embed className="video" type="video/webm" src={link} />
+          <p style={{ color: "white" }}>{cam.city}</p>
+        </>
+      )}
       <button
         className="RefreshButton"
         type="button"
@@ -47,5 +51,12 @@ export default function WebCam({ camId }) {
 }
 
 WebCam.propTypes = {
-  camId: PropTypes.string.isRequired,
+  cam: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }),
+};
+
+WebCam.defaultProps = {
+  cam: null,
 };
