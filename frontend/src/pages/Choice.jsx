@@ -2,8 +2,11 @@ import WebCam from "@components/WebCam";
 import { useState } from "react";
 
 const countries = [
-  { name: "France", camId: 1357598450 },
-  { name: "Allemagne", camId: 1357598450 },
+  { name: "Croatie", camId: 1627241943 },
+  { name: "Allemagne", camId: 1299745209 },
+  { name: "Autriche", camId: 1465822435 },
+  { name: "Estonie", camId: 1660820510 },
+  { name: "Gréce", camId: 1363670893 },
 ];
 
 function Choice() {
