@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ButtonsHome() {
   return (
     <div className="positionbutton">
-      <button className="randomButton" type="button">
-        Random
-      </button>
-      <button className="randomButton" type="button">
-        Random2
-      </button>
+      <Link className="randomButton" to="/choice">
+        Je sais où je vais
+      </Link>
+      <Link className="randomButton" to="/random">
+        Propose moi
+      </Link>
     </div>
   );
 }
+
 export default ButtonsHome;
