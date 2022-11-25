@@ -3,6 +3,7 @@ import getRandomCam from "@components/api";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WebCam from "@components/WebCam";
 import HomePage from "./components/HomePage/HomePage";
+import Choice from "./pages/Choice";
 import "./App.css";
 import backgroundImage from "./assets/backgroundHome.jpg";
 
@@ -32,6 +33,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/choice" element={<Choice />} />
           <Route path="/random" element={<WebCam camId={camId} />} />
         </Routes>
       </div>
