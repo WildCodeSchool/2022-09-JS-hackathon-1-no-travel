@@ -5,7 +5,6 @@ import WebCam from "@components/WebCam";
 import HomePage from "./components/HomePage/HomePage";
 import Choice from "./pages/Choice";
 import "./App.css";
-import backgroundImage from "./assets/backgroundHome.jpg";
 
 function App() {
   const [camId, setCamId] = useState("");
@@ -17,20 +16,7 @@ function App() {
   }, []);
   return (
     <Router>
-      <div
-        className="home"
-        style={{
-          background: `url(${backgroundImage})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPositionX: "center",
-          backgroundPositionY: "center",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div className="home">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/choice" element={<Choice />} />
