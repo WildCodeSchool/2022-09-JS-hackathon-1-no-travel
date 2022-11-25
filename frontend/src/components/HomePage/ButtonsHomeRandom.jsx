@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ButtonsHome() {
   return (
     <div className="positionbutton">
-      <Link className="randomButton" to="/random">
+      <Link className="button-home-one" to="/random">
         Propose moi
       </Link>
     </div>
