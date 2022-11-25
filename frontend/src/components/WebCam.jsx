@@ -12,6 +12,13 @@ export default function WebCam({ camId }) {
       <Link className="randomButton" to="/">
         Accueil
       </Link>
+      <button
+        className="RefreshButton"
+        type="button"
+        onClick={() => window.location.reload()}
+      >
+        Random
+      </button>
     </div>
   );
 }
