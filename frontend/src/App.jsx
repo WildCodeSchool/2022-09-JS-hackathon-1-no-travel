@@ -7,7 +7,10 @@ import Choice from "./pages/Choice";
 import "./App.css";
 
 function App() {
-  const [camId, setCamId] = useState("");
+  const [camId, setCamId] = useState({
+    id: "",
+    city: "",
+  });
   React.useEffect(() => {
     async function getId() {
       setCamId(await getRandomCam());
