@@ -6,36 +6,43 @@ const CountryCodeKey = [
   "ES",
   "DK",
   "DE",
-  "LU",
   "CH",
   "IT",
-  "PT",
   "LT",
-  "BY",
   "EE",
   "SE",
   "NO",
   "RO",
-  "MK",
-  "SI",
   "HR",
   "BG",
   "GR",
 ];
-function getRandomCam() {
+async function getRandomCam() {
   const randomCountry =
     CountryCodeKey[Math.floor(Math.random() * CountryCodeKey.length)];
-  axios
-    .get(
-      `https://api.windy.com/api/webcams/v2/list/property=live/country=${randomCountry}?key=${
-        import.meta.env.VITE_API_KEY
-      }`
-    )
-    .then((result) => {
-      return result.data.result.webcams[
-        Math.floor(Math.random() * result.data.result.webcams.length)
-      ];
-    });
+  const randomId = {
+    id: "",
+  };
+  function saveData(data) {
+    randomId.id = data;
+  }
+  try {
+    await axios
+      .get(
+        `https://api.windy.com/api/webcams/v2/list/property=live/country=${randomCountry}?key=${
+          import.meta.env.VITE_API_KEY
+        }`
+      )
+      .then((result) =>
+        saveData(
+          result.data.result.webcams[
+            Math.floor(Math.random() * result.data.result.webcams.length)
+          ].id
+        )
+      );
+  } catch (err) {
+    console.error(err);
+  }
+  return randomId.id;
 }
-
 export default getRandomCam;

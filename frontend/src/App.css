@@ -31,8 +31,6 @@ body {
 .logohomes {
   width: 60%;
   margin-bottom: 15rem;
-
-
 }
 
 .home {
@@ -52,3 +50,18 @@ body {
   justify-content: center;
   gap: 2rem;
 }
+.notVisible{
+  display: none;
+}
+.webCamPage{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.video {
+  width: 350px;
+  height: 250px;
+}
+
