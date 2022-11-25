@@ -1,13 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap');
 
 
-
-
+.logobuttons{
+  background-image: url("./src/assets/backgroundHome.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 body {
   font-family: 'League Spartan', sans-serif;
   margin: 0;
   height: 100%;
+}
+.webCamPage{
+  background-color: #ffd71f;
+  background-image: url("./src/assets/iphone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-home-one {
+  font-family: 'League Spartan', sans-serif;
+  background-color: #ffd71f;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 50px;
+  box-shadow: 3px 2px 10px 0px white;
+  margin-bottom: 5rem;
 }
 
 .randomButton {
@@ -101,7 +140,48 @@ align-items: center;
     width: 20%;
   }
 
+  .webCamPage{
+    background-color: black;
+    background-image: url("./src/assets/tele.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-cam {
+
+  }
+
   .randomButton {
+    text-align: center;
+    position: absolute;
+    left: 225px;
+    bottom: 500px;
+    width: 40px;
+  }
+
+  .RefreshButton {
+    position: absolute;
+    left: 225px;
+    bottom: 580px;
+    width: 105px;
+  }
+
+  .video {
+    position: absolute;
+    left: 465px;
+    top: 155px;
+    width: 930px;
+    height: 530px;
+  }
+
+  .button-home-one {
     width: 250px;
   }
+
 }
