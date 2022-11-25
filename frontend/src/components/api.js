@@ -22,9 +22,11 @@ async function getRandomCam() {
     CountryCodeKey[Math.floor(Math.random() * CountryCodeKey.length)];
   const randomId = {
     id: "",
+    city: "",
   };
-  function saveData(data) {
+  function saveData(data, dataCity) {
     randomId.id = data;
+    randomId.city = dataCity;
   }
   try {
     await axios
@@ -37,12 +39,15 @@ async function getRandomCam() {
         saveData(
           result.data.result.webcams[
             Math.floor(Math.random() * result.data.result.webcams.length)
-          ].id
+          ].id,
+          result.data.result.webcams[
+            Math.floor(Math.random() * result.data.result.webcams.length)
+          ].title
         )
       );
   } catch (err) {
     console.error(err);
   }
-  return randomId.id;
+  return randomId;
 }
 export default getRandomCam;
