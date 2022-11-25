@@ -1,14 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "../App.css";
 
-export default function WebCam() {
+export default function WebCam({ camId }) {
+  const link = `https://webcams.windy.com/webcams/stream/${camId}`;
+
   return (
-    <div>
-      <embed
-        type="video/webm"
-        src="https://webcams.windy.com/webcams/stream/1181820895"
-        width={700}
-        height={800}
-      />
+    <div className="webCamPage">
+      <embed type="video/webm" src={link} width={700} height={800} />
+      <Link className="randomButton" to="/">
+        Accueil
+      </Link>
     </div>
   );
 }
+
+WebCam.propTypes = {
+  camId: PropTypes.string.isRequired,
+};
